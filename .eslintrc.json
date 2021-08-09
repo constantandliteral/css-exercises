@@ -1,0 +1,54 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb-typescript",
+    "plugin:functional/lite",
+    "plugin:functional/stylitic",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["functional", "prettier"],
+  "rules": {
+    /* we must import from styled-components/macro
+    to benefit from full class name debugging */
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["!styled-components/macro"]
+      }
+    ],
+
+    /* we have lots of event handlers that will not return values,
+    so this rule is not helpful in our app's context */
+    "functional/no-return-void": 0,
+
+    /* we are happy to use typescript for props,
+    so do not want to enforce prop types */
+    "react/prop-types": 0
+  },
+  "overrides": [
+    /* some rules are noise rather than assistance in tests: */
+    {
+      "rules": {
+        "functional/no-let": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/jsx-no-literals": 0
+      },
+      "files": [
+        "src/**/tests/**",
+        "src/**/specs/**",
+        "**/**.test.{ts,tsx}",
+        "setupTests.ts"
+      ]
+    }
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

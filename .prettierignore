@@ -1,0 +1,15 @@
+.env
+.gitignore
+.husky
+.nvmrc
+.prettierignore
+.stylelintrc
+*.ico
+*.png
+*.svg
+*.tf
+*.txt
+build
+node_modules
+public/fonts
+yarn.lock

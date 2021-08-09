@@ -1,0 +1,4 @@
+{
+  "*.{ts,tsx}": ["yarn eslint --quiet --fix"],
+  "*": ["yarn prettier --write"]
+}
