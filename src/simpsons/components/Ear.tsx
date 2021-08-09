@@ -9,22 +9,54 @@ import styled from 'styled-components/macro';
 const EarContainer = styled.div.attrs({
   'data-testid': 'ear',
 })`
-  /* work here */
+  bottom: -5px;
+  height: 60px;
+  left: 115px;
+  position: absolute;
+  width: 60px;
+  z-index: 2;
+
+  &:before {
+    content: 'M';
+    display: block;
+    font: lighter 100px Arial, Helvetica, sans-serif;
+    left: -20px;
+    position: absolute;
+    transform: rotate(-10deg);
+    top: -100px;
+    z-index: 1;
+  }
 `;
 
 // REMEMBER: You can only make changes inside the template string ``
 const EarBase = styled.div`
-  /* work here */
+  overflow: hidden;
+
+  &::after {
+    background-color: #fbc603;
+    border-radius: 50%;
+    border: 8px solid black;
+    content: '';
+    display: block;
+    height: 100%;
+    margin-left: 20%;
+    width: 100%;
+  }
 `;
 
 // REMEMBER: You can only make changes inside the template string ``
 const OuterEar = styled(EarBase)`
-  /* work here */
+  height: 60px;
+  width: 60px;
 `;
 
 // REMEMBER: You can only make changes inside the template string ``
 const InnerEar = styled(EarBase)`
-  /* work here */
+  height: 30px;
+  margin-left: 30px;
+  margin-top: -50px;
+  transform: rotate(45deg);
+  width: 30px;
 `;
 
 // REMEMBER: You cannot change anything here

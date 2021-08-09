@@ -8,7 +8,21 @@ import styled from 'styled-components/macro';
 const Screen = styled.div.attrs({
   'data-testid': 'screen',
 })`
-  /* work here */
+  align-items: flex-end;
+  background: #376faa;
+  border: 8px solid black;
+  border-radius: 80px;
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: filter 500ms;
+  width: 600px;
+
+  &:hover {
+    filter: grayscale(1);
+  }
 `;
 
 export default Screen;
