@@ -4,7 +4,9 @@
 .nvmrc
 .prettierignore
 .stylelintrc
+*.gif
 *.ico
+*.jpg
 *.png
 *.svg
 *.tf
